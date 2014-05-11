@@ -1,0 +1,2 @@
+module PennCoursesHelper
+end

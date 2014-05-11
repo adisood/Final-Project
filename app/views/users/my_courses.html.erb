@@ -1,0 +1,20 @@
+<div class="content">
+        <div class="content-box">
+		<div style="text-decoration:underline"><h2>My Courses</h2></div>
+		<ul>
+                <% @relations.each do |relations| %>
+		<li><table>
+		<tr>
+		<td><form action="/penn_courses/my_recommendations" method="get">
+			<input style="width: 200px" type="submit" name="search" id="search" value="<%= relations.course_code%>">
+		</form></td>	
+		<td><form action ="/users/my_courses" method="get">
+                        <input type="submit" name="delete_class" id="delete_class" value="Delete Class <%=relations.course_code%>">
+                	</form></td>
+		</tr>
+		</table></li>
+                <% end %>
+		</ul>
+        </div>
+</div>
+

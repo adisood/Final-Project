@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FinalProject</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="top-bar">
+        <ul class="top">
+                <li id="image"><a href="/home/index"><%= image_tag("logo.png", :alt => "Course Recommend") %></a></li>
+        </ul>
+</div>
+<div class="X"><nav>
+        <ul class="navbar">
+                <li id="home"><a href="/home/index">HOME</a></li>
+                <li id="class-list"><a href="/home/class_list">CLASS LIST</a></li>
+                <li id="users"><a href="/home/user_list">USERS</a><li>
+		<%if user_signed_in? %>
+			<li id="my-page"><a href="/users/my_courses">MY PAGE</a></li>
+        	<% end %>
+	</ul>
+</nav></div>
+<div class="logout">
+	<% if user_signed_in? %>
+		<%= button_to('Logout', destroy_user_session_path, :id => "buttons", :method => :delete) %>
+	<% end %>
+</div>
+<%= yield %>
+
+</body>
+</html>

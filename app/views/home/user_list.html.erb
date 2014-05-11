@@ -1,0 +1,8 @@
+<div class="content">
+        <div class="content-box">
+                <ul>
+                <% @users.each do |users| %>
+                        <li><%= users.username %>: <%= users.email %></li>
+                <% end %>
+        </div>
+</div>

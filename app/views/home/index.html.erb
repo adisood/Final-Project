@@ -1,0 +1,35 @@
+<div class="content">
+        <div class="title">
+                <h1>I'm Looking For</h1>
+        </div>
+	<div class="temp">
+        <div class="content-box">
+                <form action="/penn_courses/my_recommendations" method="get">
+                        <label>Penn Course:</label>
+                        <input autofocus="autofocus" id ="search" name ="search"  type ="text" placeholder="Course Code/Title">
+                        <input id ="buttons" type="submit" value="Search Box">
+                </form>
+                <h4>Instructions:</h4>
+                <h5>Please enter the Penn Course Code/Title that you are looking for.</h5>
+                <h5>Please make sure to use a "-" in the Course Code.</h5>
+                </div>
+        </div>
+	<% unless user_signed_in? %>
+	<div class="signin-box">	
+		<form accept-charset="UTF-8" action="/users/sign_in" class="new_user" id="new_user" method="post">
+			<div style="margin:0;padding:0;display:inline">
+				<input name="utf8" type="hidden" value="✓">
+				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+			</div>
+			<input id ="user_email" name ="user[email]" type ="email" placeholder="email">
+			<input id ="user_password" name ="user[password]" type ="password" placeholder="password">
+			<input id ="buttons" type ="submit" value="Sign In">
+		</form>
+		<div class="sign-up">
+			<div>Not a member?</div>
+			<div id="signup_button"><a href="/users/sign_up">Create Account</div>
+		</div>
+	</div>
+	<% end %>
+	</div>
+</div>

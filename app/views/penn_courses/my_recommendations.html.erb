@@ -1,0 +1,27 @@
+<div class="content">
+	<div class="content-box">
+		<% unless @course.blank?%>
+		<div id="Penn-Course"><%= "Penn Course ID: #{@course.code}"%></div>
+                <div><%= "Description: #{@course.des}"%></div>
+		<% if user_signed_in? %>
+		<form action ="/users/my_courses" method="get">
+			<input type="submit" name="add_class" id="add_class" value="Add Class <%=@course.code%>">
+		</form>
+		<% end %>
+		<ul>
+			<li><h4>Recommended Classes:</h4><li>
+			<% @recommendations.each do |recommendations| %>
+                        <% unless "#{recommendations.title}".blank? %>
+                        <li style="text-align:left; font-weight:bold">Recommendation: <%="#{recommendations.title}"%></li>
+                        <li style="text-align: left">Description: <%="#{recommendations.des}"[0..500]%>.....</li>
+                        <li style="text-align: left">Source: <%="#{recommendations.source}"%></li>
+                        <li style="text-align: left">Link: <%=link_to "#{recommendations.link}", "#{recommendations.link}"%></li>
+			<% end %>
+			<% end %>
+		</ul>
+		<% else %>
+		<div>Incorrect Input</div>
+		<div>Please refer to class list for available courses</div>
+		<% end %>
+	</div>
+</div>		

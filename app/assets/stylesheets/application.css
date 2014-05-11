@@ -1,0 +1,156 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body{
+       //background-color:#A9E2F3;
+        background-image: url("background4.jpg");
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        line-height: 17px;
+        padding: 0px;
+}
+
+.top{
+        background-color:#009933;
+        width: 100%;
+        height: 84px;
+        box-shadow: 0px 0px 10px #333;
+        margin: 0;
+        padding: 0px;
+        padding-top: 7px;
+        border-radius: 5px;
+        text-align: center;
+}
+
+ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+}
+
+#image{
+        margin-top: 2px;
+}
+
+#penn{
+        color: #000;
+        float: left;
+        font-size: 36px;
+}
+
+.X{
+	text-align: center;
+	width: 100%;
+	height: 50px;
+}
+
+nav{
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin-top: 30px;
+        position: absolute;
+}
+
+.navbar {
+        overflow: hidden;
+        display: inLine-block;
+        text-align: center;
+	width: 70%;
+	background-color: #f0f0f0;
+	border-radius: 4px 4px 4px 4px;
+}
+
+.navbar li{
+	border-left: 1px solid rgba(9, 9, 9, 0.125);
+        //box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+        position: relative;
+        list-style: none;
+	display: inline;
+}
+
+.navbar li:last-child{
+        border-radius: 0 4px 4px 0;
+}
+
+.navbar li a{
+        color: #5d5d5d;
+        display: inLine-block;
+        font: 20px/1 Lobster, Arial, sans-serif;
+        padding: 12px 35px 14px;
+        position: relative;
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+        text-decoration:none !important;
+        white-space:nowrap;
+}
+
+.content{
+        position: absolute;
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        text-align: center;
+}
+
+.content-box{
+        width: 470px;
+        background-color:#009933;
+        border-radius: 5px;
+        box-shadow: 0px 1px 2px rgba(0,0,0,.25);
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+.devise-box{
+        width: 470px;
+        background-color:#009933;
+        border-radius: 5px;
+        box-shadow: 0px 1px 2px rgba(0,0,0,.25);
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+	margin-top: 90px;
+	text-align: center;
+}
+
+.devise-box label{
+	font-weight: bold;
+}
+
+.devise-box li{
+	padding-bottom: 3px;
+}
+
+.devise-box a{
+	color: #fff;
+}
+
+#buttons{
+        text-align: center;
+        width: 85px;
+        height: 25px;
+        border-radius: 3px;
+        color: white;
+        font-size: 12px;
+        background-color: #0571a6;
+        border-color: #045a8b;
+}
+
+.logout{
+	margin-top: 35px;
+	text-align: center;
+}

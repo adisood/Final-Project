@@ -1,0 +1,9 @@
+<div class="content">
+	<div class="content-box">
+		<form action="/penn_courses/my_recommendations" method="get">
+		<ul>
+		<% @classes.each do |classes| %>
+			<li><input style="width: 200px" type="submit" name="search" id="search" value="<%= classes.code %>"></li>
+		<% end %>
+	</div>
+</div>		
