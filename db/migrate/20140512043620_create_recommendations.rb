@@ -1,8 +1,5 @@
 class CreateRecommendations < ActiveRecord::Migration
   def change
-    drop_table :recommendations
-    end
-
     create_table :recommendations do |t|
       t.string :title
       t.text :des
