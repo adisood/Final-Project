@@ -1,28 +1,37 @@
-== README
+Course Recommend is a site that allows the user to search from a variety of Penn courses and provides them with
+links to recommended tutorial sites. It allows the user to "sign up" so that he can easily navigate to "his page" which lists
+the specific Penn courses that he is interested in. He can manage this page by adding/deleting courses to his liking.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+There are 5 tables -> User, PennCourse, Recommendation, UserPennCourse and PennCourseRecommendation
+Each User has the following main attributes: username (model checks for uniqueness), email (model checks for uniqueness), 
+                                             password
+Each PennCourse has the following main attributes: code, title, description
+Each Recommendation has the following attributes: title, description, source, link
 
-Things you may want to cover:
+The UserPennCourse table is used to connect Users to PennCoursess in order for each user to be able to his preferred courses
+The PennCourseReccomendation table is used to connect PennCourses to Recommendations so that each course has access to its
+specific recommendations.
 
-* Ruby version
+The database is pre-loaded using seed.rb to fill in the PennCourse, Recommendation and PennCourseRecommendation tables.
+The data for each PennCourse was obtained using Penn Course Review's API.
+The data for each Recommendation was obtained using the open API for Khan Academy and MIT OpenCourseWare
+The data linking Penn courses to their recommendations was obtained from work in another class
 
-* System dependencies
+The gem I used is 'devise'. Devise is an authentication solution which handles all of the controller logic and form views 
+for you. It provides its own 'sign up' and 'sign in' views (which can be modified), performs all the checks necessary
+(eg. password confirmation, etc) and also queries (eq when creating new user) the User model.
+more info found at - https://github.com/plataformatec/devise/wiki
 
-* Configuration
+The javascript/JQuery I used is very minimal. I was more comfortable working with the css style sheets, so most pages are
+styled using css. I only used JQuery to show edit the colors of certain elements in penn_courses/ and users/
 
-* Database creation
+The biggest problem I encountered during this project at first was creating Users and allowing them to have their own custom
+page. Using 'derive' made this a lot easier. Some of the minor problems that were solved as a result of this were - only
+allowing users who are signed in to access to a my page, only allowing signed in users to add classes.
 
-* Database initialization
+Another problem I encountered was when trying to delete courses from a user's page. I didn't know how to send the information
+about the class object through a form. I fixed this by including the course code in the 'value' field for the 'submit button' 
+but only displaying the 'Delete Class' portion. In the controller I truncated the string parameter to get the course code,
+searched for it in the UserPennCourse table where the useremail was the current user's email, and then deleted that row.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Link to Heroku site: http://whispering-spire-5940.herokuapp.com/home/index
