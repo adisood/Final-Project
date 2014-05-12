@@ -3,11 +3,11 @@
 one:
   code: MyString
   title: MyString
-  des: MyString
+  des: MyText
   rec: 
 
 two:
   code: MyString
   title: MyString
-  des: MyString
+  des: MyText
   rec: 

@@ -3,7 +3,7 @@ class CreatePennCourses < ActiveRecord::Migration
     create_table :penn_courses do |t|
       t.string :code
       t.string :title
-      t.string :des
+      t.text :des
       t.references :rec
 
       t.timestamps

@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  des: MyString
+  des: MyText
   source: MyString
   link: MyString
 
 two:
   title: MyString
-  des: MyString
+  des: MyText
   source: MyString
   link: MyString
